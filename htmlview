@@ -1,0 +1,73 @@
+#!/usr/bin/env python
+
+import os
+import pygtk
+import gtk
+import gobject
+import webkit
+import signal
+import logging
+import urllib
+
+logging.basicConfig(level=logging.INFO)
+
+def show(filename):
+	if filename == '-':
+		file = sys.stdin
+		close = lambda: None
+	else:
+		file = open(filename)
+		close = file.close
+	try:
+		view = HtmlView(file).run()
+	except KeyboardInterrupt: pass
+	finally:
+		close()
+
+class HtmlView(object):
+	def __init__(self, file):
+		gtk.gdk.threads_init()
+		contents = file.read()
+		self.webkit_window(contents)
+
+	@classmethod
+	def set_quit(cls, *a, **kw):
+		gobject.idle_add(gtk.main_quit)
+
+	def webkit_window(self, content):
+		window = gtk.Window()
+		box = gtk.VBox(homogeneous=False, spacing=0)
+		webview = webkit.WebView()
+
+		window.set_default_size(640, 480)
+		window.connect('destroy', self.set_quit)
+
+		window.add(box)
+		box.pack_start(webview, expand=True, fill=True, padding=0)
+
+		webview.load_html_string(content, 'file://' + urllib.quote(os.path.abspath(os.getcwd())))
+		window.show_all()
+		window.grab_focus()
+
+		return (window, webview)
+
+
+	def run(self):
+		gtk.gdk.threads_enter()
+
+		logging.debug('starting gtk')
+		gtk.main()
+		gtk.gdk.threads_leave()
+		logging.debug('gtk.main() ended')
+
+
+if __name__ == '__main__':
+	import sys
+	if len(sys.argv) == 1:
+		filename = '-'
+	else:
+		if len(sys.argv) != 2:
+			print "usage: %s [html_file]\n (stdin used if no file given)" % (os.path.basename(sys.argv[0]),)
+			sys.exit(1)
+		filename = sys.argv[1]
+	sys.exit(show(filename))

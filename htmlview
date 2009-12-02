@@ -36,14 +36,15 @@ class HtmlView(object):
 
 	def webkit_window(self, content):
 		window = gtk.Window()
+		scrollView = gtk.ScrolledWindow()
 		box = gtk.VBox(homogeneous=False, spacing=0)
 		webview = webkit.WebView()
+		scrollView.add(webview)
 
 		window.set_default_size(640, 480)
 		window.connect('destroy', self.set_quit)
 
-		window.add(box)
-		box.pack_start(webview, expand=True, fill=True, padding=0)
+		window.add(scrollView)
 
 		webview.load_html_string(content, 'file://' + urllib.quote(os.path.abspath(os.getcwd())))
 		window.show_all()

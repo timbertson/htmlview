@@ -67,7 +67,7 @@ if __name__ == '__main__':
 	if len(sys.argv) == 1:
 		filename = '-'
 	else:
-		if len(sys.argv) != 2:
+		if len(sys.argv) != 2 or sys.argv[1] == '--help':
 			print "usage: %s [html_file]\n (stdin used if no file given)" % (os.path.basename(sys.argv[0]),)
 			sys.exit(1)
 		filename = sys.argv[1]

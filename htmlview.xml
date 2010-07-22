@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type='text/xsl' href='interface.xsl'?>
+<interface uri="http://gfxmonk.net/dist/0install/htmlview.xml" xmlns="http://zero-install.sourceforge.net/2004/injector/interface">
+  <name>htmlview</name>
+  <summary>simple pygtk+ html viewer window</summary>
+  <description>
+	</description>
+
+  <group main="htmlview">
+		<implementation id="sha1new=eeb9b7fff99fc241026110f6870a2063fa76a33c" released="2010-07-22" version="0.1">
+    <manifest-digest sha256="9dd9b193459739813afb728ffa9d220fb091cd473e1cffc1df543384cf1b83eb"/>
+    <archive href="http://gfxmonk.net/dist/0install/htmlview/htmlview-0.1.tgz" size="890"/>
+  </implementation>
+  </group>
+</interface>

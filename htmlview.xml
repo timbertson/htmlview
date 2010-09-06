@@ -3,6 +3,7 @@
 <interface uri="http://gfxmonk.net/dist/0install/htmlview.xml" xmlns="http://zero-install.sourceforge.net/2004/injector/interface">
   <name>htmlview</name>
   <summary>simple pygtk+ html viewer window</summary>
+	<homepage>http://github.com/gfxmonk/htmlview</homepage>
   <description>
 	</description>
 

@@ -3,6 +3,7 @@
 <interface uri="http://gfxmonk.net/dist/0install/mdview.xml" xmlns="http://zero-install.sourceforge.net/2004/injector/interface">
   <name>mdview</name>
   <summary>markdown viewer</summary>
+		part of htmlview (see http://gfxmonk.net/dist/0install/htmlview.xml)
   <description>
 </description>
   <group main="mdview">

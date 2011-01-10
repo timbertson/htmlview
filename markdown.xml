@@ -1,17 +1,17 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <?xml-stylesheet type='text/xsl' href='interface.xsl'?>
-<interface uri="http://gfxmonk.net/dist/0install/markdown.xml" xmlns="http://zero-install.sourceforge.net/2004/injector/interface">
+<interface xmlns="http://zero-install.sourceforge.net/2004/injector/interface" uri="http://gfxmonk.net/dist/0install/markdown.xml">
 	<name>markdown</name>
 	<summary>John Gruber's markdown</summary>
 	<description>
 	</description>
 	<homepage>http://daringfireball.net/projects/markdown/</homepage>
-	<publish mode="third-party" xmlns="http://gfxmonk.net/dist/0install"/>
-
+	<publish xmlns="http://gfxmonk.net/dist/0install" mode="third-party"/>
 	<group main="markdown">
+		<environment insert="" mode="append" name="PATH"/>
 		<implementation id="sha1new=cef65203621a3b1819b545daebf160dfc378e7cf" released="2010-07-22" version="1.0.1">
-		<manifest-digest sha256="44b9c0614b2d170fade67fc471ef420c00b709a33ac149f9c24779e0858ea941"/>
-		<archive href="http://gfxmonk.net/dist/0install/markdown/markdown-1.0.1.tgz" size="12385"/>
-	</implementation>
+			<manifest-digest sha256="44b9c0614b2d170fade67fc471ef420c00b709a33ac149f9c24779e0858ea941"/>
+			<archive href="http://gfxmonk.net/dist/0install/markdown/markdown-1.0.1.tgz" size="12385"/>
+		</implementation>
 	</group>
 </interface>

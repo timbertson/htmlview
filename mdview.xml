@@ -1,9 +1,17 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <?xml-stylesheet type='text/xsl' href='interface.xsl'?>
-<interface uri="http://gfxmonk.net/dist/0install/mdview.xml" xmlns="http://zero-install.sourceforge.net/2004/injector/interface"><name>mdview</name><summary>markdown viewer</summary>
-		part of htmlview (see http://gfxmonk.net/dist/0install/htmlview.xml)
-  <description>
+<interface xmlns="http://zero-install.sourceforge.net/2004/injector/interface" uri="http://gfxmonk.net/dist/0install/mdview.xml">
+	<name>mdview</name>
+	<summary>markdown viewer</summary>
+	<description>
 A couple of useful tools for viewing HTML and markdown
 	</description>
-  <group main="mdview"><requires interface="http://gfxmonk.net/dist/0install/markdown.xml"/><requires interface="http://gfxmonk.net/dist/0install/htmlview.xml"/><implementation id="sha1new=42154ace1481666b79e51f3783d60ff7de8431d7" released="2010-07-22" version="0.1"><manifest-digest sha256="82285cb193c39a6aebd75cca42475dd9d5b57d7bde02ff2369bec897a1437352"/><archive href="http://gfxmonk.net/dist/0install/mdview/mdview-0.1.tgz" size="228"/></implementation></group>
+	<group main="mdview">
+		<requires interface="http://gfxmonk.net/dist/0install/markdown.xml"/>
+		<requires interface="http://gfxmonk.net/dist/0install/htmlview.xml"/>
+		<implementation id="sha1new=42154ace1481666b79e51f3783d60ff7de8431d7" released="2010-07-22" version="0.1">
+			<manifest-digest sha256="82285cb193c39a6aebd75cca42475dd9d5b57d7bde02ff2369bec897a1437352"/>
+			<archive href="http://gfxmonk.net/dist/0install/mdview/mdview-0.1.tgz" size="228"/>
+		</implementation>
+	</group>
 </interface>

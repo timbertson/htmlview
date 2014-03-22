@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ "$#" -ne 1 ]; then
 	echo "usage: mdview [markdown_file]"
 	echo "   requires: markdown, htmlview"
 	exit 1
 fi
-markdown "$1" | htmlview -
+exec htmlview <(markdown "$1")
